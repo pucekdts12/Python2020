@@ -34,6 +34,7 @@ class Scene(BaseScene.Scene):
         self.ball.rect.top=(self.size[1]-self.ball.rect.height)/2
 
       self.ball.move()
+
       if self.ball.rect.left<0 or self.ball.rect.right>self.size[0]:
         self.ball.speed[0]*=-1
       if self.ball.rect.top<0 or self.ball.rect.bottom>self.size[1]:

@@ -1,5 +1,5 @@
 import pygame as pg
-class Ball:
+class Ball: # SimpleBall
   def __init__(self,r,color):
     self.surface = pg.Surface((r,r),pg.SRCALPHA,32).convert_alpha()
     self.surface.fill((0,0,0,0))
