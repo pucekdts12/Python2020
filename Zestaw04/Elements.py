@@ -4,9 +4,11 @@ class Ball: # SimpleBall
     self.surface = pg.Surface((r,r),pg.SRCALPHA,32).convert_alpha()
     self.surface.fill((0,0,0,0))
     self.rect = self.surface.get_rect(center=(r/2,r/2))
+    pg.draw.circle(self.surface,color,(r/2,r/2),r/2)
+    #self.surface = pg.image.load('.\\ball.png')
+    self.rect = self.surface.get_rect(center=(r/2,r/2))
     self.speed=[0,0]
     self.velocity=[0,0]
-    pg.draw.circle(self.surface,color,(r/2,r/2),r/2)
 
   def s(self):
     return self.surface
