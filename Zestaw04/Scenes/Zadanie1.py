@@ -22,13 +22,13 @@ class Scene(BaseScene.Scene):
       #ruch dziala jak w grze asteroidy
       if keys[pg.K_UP]:
         self.ball.speed[1] = round(self.ball.speed[1]-self.speed_step,2)
-      elif keys[pg.K_RIGHT]:
+      if keys[pg.K_RIGHT]:
         self.ball.speed[0] = round(self.ball.speed[0]+self.speed_step,2)
-      elif keys[pg.K_DOWN]:
+      if keys[pg.K_DOWN]:
         self.ball.speed[1] = round(self.ball.speed[1]+self.speed_step,2)
-      elif keys[pg.K_LEFT]:
+      if keys[pg.K_LEFT]:
         self.ball.speed[0] = round(self.ball.speed[0]-self.speed_step,2)
-      elif keys[pg.K_r]:
+      if keys[pg.K_r]:
         self.ball.speed=[0,0]
         self.ball.rect.left=(self.size[0]-self.ball.rect.width)/2
         self.ball.rect.top=(self.size[1]-self.ball.rect.height)/2

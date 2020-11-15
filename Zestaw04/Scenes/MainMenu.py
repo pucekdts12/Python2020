@@ -3,6 +3,7 @@ from Elements import Ball,Label,Button
 from . import BaseScene,Zadanie1,Zadanie2
 
 class Scene(BaseScene.Scene):
+  _instance = None
   def __init__(self,screen):
     super().__init__(screen)
     self.bg = pg.Surface(screen.get_rect().size)
@@ -22,19 +23,26 @@ class Scene(BaseScene.Scene):
     self.label_Speed.rect.center = (screen.get_width()/2,200)
     self.label_SpeedVal = Label(str(self.start_speed),ff,(255,0,0))
     self.label_SpeedVal.rect.center = (screen.get_width()/2,240)
-    
-
 
   def preEvents(self):
     keys = pg.key.get_pressed()
     if keys[pg.K_UP]:
-      self.start_speed[1] = round(self.start_speed[1]+0.1,2)
+      self.start_speed[1] = round(self.start_speed[1]-0.1,2)
     elif keys[pg.K_RIGHT]:
       self.start_speed[0] = round(self.start_speed[0]+0.1,2)
     elif keys[pg.K_DOWN]:
-      self.start_speed[1] = round(self.start_speed[1]-0.1,2)
+      self.start_speed[1] = round(self.start_speed[1]+0.1,2)
     elif keys[pg.K_LEFT]:
       self.start_speed[0] = round(self.start_speed[0]-0.1,2)
+    elif keys[pg.K_1]:
+      self.next_scene = Zadanie1.Scene(self.screen)
+      return
+    elif keys[pg.K_2]:
+      self.next_scene = Zadanie2.Scene(self.screen)
+      self.next_scene.start_speed = self.start_speed
+      self.next_scene.reset()
+      return
+
     elif keys[pg.K_r]:
       self.start_speed=[0,0]
 

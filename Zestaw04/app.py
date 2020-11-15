@@ -25,3 +25,11 @@ class App:
 
         if not active_scene.running: break
         if active_scene.next_scene: active_scene = active_scene.next_scene
+
+
+
+if __name__=="__main__":
+  pg.init()
+  App.main()
+  pg.quit()
+  sys.exit()
