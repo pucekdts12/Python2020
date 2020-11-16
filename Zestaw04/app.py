@@ -1,4 +1,4 @@
-import pygame as pg
+import pygame as pg,sys
 from Scenes import MainMenu
 
 class App:

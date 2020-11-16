@@ -8,21 +8,25 @@ def zadanie3(args):
 def zadanie4(args):
   # nie wiem o co dokłanie chodzi z tymi róznymi sposobami na stworzenie słownika
   # domyślam się że chodzi o to że można stworzyć wprost:
-  d={'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000}
+  d={'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000,' ':0}
   # albo
   # d=dict()
   # d['I']=1
   # d['V']=5 # itd.?
-  r = args.roman
-  
+  r = args.roman+' '
+  # last = 0
+  sum = 0
+  print(args.roman)
+  for i in range(0,len(r)-1):
+    if d[r[i]]>=d[r[i+1]]:
+      sum+=(d[r[i]]-last)
+      last = 0
+    else:
+      last+=d[r[i]]
 
 
-  
 
-
-
-
-  
+  print(sum)  
 
 def zadanie5(args):
   input = ast.literal_eval(args.list)
@@ -30,7 +34,7 @@ def zadanie5(args):
   def iteracyjna(input):
     n = args.right-args.left+1
     print(input)
-    for i in range(0,int(n/2))
+    for i in range(0,int(n/2)):
       input[args.left+i],input[args.right-i] = input[args.right-i],input[args.left+i]
     print(input)
 

@@ -47,13 +47,6 @@ class Ball(Elements.Ball): #AdvancedBall
       
       
 
-    
-      
-
-
-
-    
-
 class Scene(BaseScene.Scene):
   def __init__(self,screen):
     super().__init__(screen)
