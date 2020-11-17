@@ -1,4 +1,4 @@
-## Zestaw01 2020-10-17
+## Zestaw04 2020-10-17
 #### Wywołanie
 Zadania 1 i 2 - Wymagają modułów pygame oraz numpy(użyte by uprościć obliczenia na wektorach)
 ```
