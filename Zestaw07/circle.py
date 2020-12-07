@@ -57,11 +57,13 @@ class TestCircle(unittest.TestCase):
   def test_operations(self):
     c1 = Circle(0,0,5)
     c2 = Circle(3,0,1)
+    c3 = Circle(7,0,1)
     c1.move(1,2)
     self.assertTrue(c1==Circle(1,2,5))
     self.assertTrue(c1.area()==(math.pi*5**2))
     self.assertTrue(c1.cover(c1)==c1)
-    self.assertTrue(c1.cover(c2)==Circle(2,1,(2**(1/2)+5)))
+    self.assertTrue(c1.cover(c2)==Circle(1,2,5))
+    self.assertTrue(c2.cover(c3)==Circle(5,0,3))
 
 if __name__=="__main__":
   sys.argv[1:] = [] # usuwam parametry przekazane przez linie komend bo unittest ma jakiś problem
