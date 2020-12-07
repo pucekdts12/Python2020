@@ -65,8 +65,5 @@ class TestCircle(unittest.TestCase):
 
 if __name__=="__main__":
   sys.argv[1:] = [] # usuwam parametry przekazane przez linie komend bo unittest ma jakiś problem
-  #unittest.main()
-  c1 = Circle(0,0,10)
-  c2 = Circle(2,2,1)
-  print(c1.cover(c2))
+  unittest.main()
 
