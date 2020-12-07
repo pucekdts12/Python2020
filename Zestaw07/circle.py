@@ -22,8 +22,11 @@ class Circle:
   def move(self, x, y): self.pt+=Point(x,y) # przesuniecie o (x, y)
 
   def cover(self, o): # najmniejszy okrąg pokrywający oba
-    nc = Point((self.pt.x+o.pt.x)/2,(self.pt.y+o.pt.y)/2)
+    nc = Point((self.pt.x+o.pt.x)/2,(self.pt.y+o.pt.y)/2) # punkt pośredi
     nr = (nc-o.pt).length()+max(self.r,o.r)
+    # sprawdzenie czy najdalej wysuniety punkt mniejszego okregu zawiera sie w wiekszym
+    if (self.pt-o.pt).length()+min(self.r,o.r) < max(self.r,o.r):
+      return max(self,o,key=lambda c:c.r)
     return Circle(nc.x, nc.y, nr)
 
 # Kod testujący moduł.
@@ -62,4 +65,8 @@ class TestCircle(unittest.TestCase):
 
 if __name__=="__main__":
   sys.argv[1:] = [] # usuwam parametry przekazane przez linie komend bo unittest ma jakiś problem
-  unittest.main()
+  #unittest.main()
+  c1 = Circle(0,0,10)
+  c2 = Circle(2,2,1)
+  print(c1.cover(c2))
+
