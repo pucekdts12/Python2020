@@ -38,12 +38,29 @@ def closestX(points,start_ind,end_coord):
       return (i-1 if i-1 > start_ind else start_ind)
   return len(points)-1
 
+def closestY(points,start_ind,end_coord):
+  for i in range(start_ind,len(points)):
+    if points[i].y>end_coord:
+      return (i-1 if i-1 > start_ind else start_ind)
+  return len(points)-1
 
 def bruteForce(points,rect):
   pointsX = sorted(points,key=lambda p:p.x)
   max = 0
+  for i,sx in enumerate(pointsX):
+    ex = closestX(pointsX,i,sx.x + rect.w)
+    pointsY = sorted(pointsX[i:ex],key=lambda p:p.y)
+    for j,sy in enumerate(pointsY):
+      ey = closestY(pointsY,j,sy.y + rect.h)
+      pp = pointsY[j:ey]
+      # print(pp)
+      if len(pp)>max:
+        max = len(pp)
+        rect.x = sx.x
+        rect.y = sy.y
+      
   
-  # TODO
+  
 
   print(f"Max is {max}")
   return rect
@@ -61,10 +78,10 @@ def bruteForce(points,rect):
 random.seed(100)
 
 points = [ Point.createRandom() for i in range(0,100) ]
-rect = Rectangle(0,0,0,0)
+rect = Rectangle(0,0,100,100)
 
 
-
+rect = bruteForce(points,rect)
 
 render(points,rect)
 
