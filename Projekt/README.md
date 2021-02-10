@@ -1,11 +1,22 @@
 # Python2020 - Projekt Baza Danych
-## Opis
+## Co projekt powinien mieć
+Baza danych książek, płyt, itp.  - **TAK**
+Baza powinna być zapisywana do pliku (txt, CSV, JSON). - **TAK**
+Operacje na bazie: wstawianie, usuwanie, wyszukiwanie, listowanie. - **TAK**
+
+## Opis - co projekt ma
 Baza przechowywana jest w pliku tekstowym json.  
 Operacje na danych:
  - SELECT
  - INSERT
  - UPDATE
  - DELETE
+Plik projekt.db zawiera dwie przykładowe tablice: movies oraz books
+Obsługa SQL jest dość prymitywna bo:
+ - brak sortowania rekordów
+ - brak kluczy głównych
+ - brak ochrony przed duplikacją rekordów
+ale to nie było tematem projektu.
 
 ### Wywołanie
 ```
