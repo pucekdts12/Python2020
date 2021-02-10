@@ -1,0 +1,1 @@
+{"tables": {"test": {"columns": ["id", "name", "surname", "salary"], "rows": [[1, "Jan", null, null]]}}}

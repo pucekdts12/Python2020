@@ -12,12 +12,13 @@ Operacje na danych:
  - UPDATE
  - DELETE  
 
-Plik projekt.db zawiera dwie przykładowe tablice: movies oraz books  
+Plik **projekt.db** zawiera dwie przykładowe tablice: movies oraz books  
 
 Obsługa SQL jest dość prymitywna bo:
  - brak sortowania rekordów
  - brak kluczy głównych
  - brak ochrony przed duplikacją rekordów
+ - i wiele wiele innych
 ale to nie było tematem projektu.
 
 ### Wywołanie
@@ -111,6 +112,17 @@ db> CREATE TABLE test(id,name,surname,salary)
 db> .schema
 Tables in database[:memory:]:
 test(id,name,surname,salary)
-db>
+db> INSERT INTO test(id,name) VALUES(1,'Jan')
+Rows affected: 1
+db> SELECT * FROM test
+id|name|surname|salary
+1|Jan|None|None
+db> .file
+Database :memory:
+db> .save frommemory.db
+db> .file
+Database frommemory.db
+db> COMMIT
+Database saved.
 ```
 
