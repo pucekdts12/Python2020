@@ -10,8 +10,10 @@ Operacje na danych:
  - SELECT
  - INSERT
  - UPDATE
- - DELETE
-Plik projekt.db zawiera dwie przykładowe tablice: movies oraz books
+ - DELETE  
+
+Plik projekt.db zawiera dwie przykładowe tablice: movies oraz books  
+
 Obsługa SQL jest dość prymitywna bo:
  - brak sortowania rekordów
  - brak kluczy głównych
