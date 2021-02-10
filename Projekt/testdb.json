@@ -1,0 +1,1 @@
+{"tables": {"tabela1": {"columns": ["id", "name", "year"], "rows": [[1, "Najgorszy Rok", 2020], [2, "Niewiadomy Rok", 2023], [3, "TEST", 2000], [-1, "Puste", null]]}}}
